@@ -1,0 +1,2525 @@
+/* ============================================================================
+   PREDIKOVERKSTADEN – Liturgisk & Redaktionell Stilmall
+   ============================================================================ */
+
+:root {
+  --bg-page: #f5f1ea;
+  --bg-card: #fffdf9;
+  --bg-parchment: #f8f3e8;
+  --ink-primary: #1f1b18;
+  --ink-secondary: #5c534b;
+  --border-warm: #dfd5c5;
+  --accent-burgundy: #6d2438;
+  --accent-gold: #c68b2c;
+  --accent-violet: #5a388c;
+  --accent-forest: #2d6a4f;
+  --accent-blue: #275d8c;
+  --shadow-soft: 0 6px 20px rgba(38, 29, 20, 0.07);
+  --radius-md: 12px;
+  --radius-sm: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+  line-height: 1.48;
+  padding-bottom: 40px;
+}
+
+h1, h2, h3, .pulpit-quote {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.muted {
+  color: var(--ink-secondary);
+  font-size: 0.88rem;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ============================================================================
+   TOPPANEL (HEADER)
+   ============================================================================ */
+.app-header {
+  background: linear-gradient(135deg, #251d29 0%, #3d2435 100%);
+  color: #fdfbf7;
+  padding: 14px 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border-bottom: 3px solid var(--accent-gold);
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-emblem {
+  font-size: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.app-title {
+  font-size: 1.35rem;
+  letter-spacing: 0.3px;
+}
+
+.app-subtitle {
+  font-size: 0.84rem;
+  color: #dfd6cb;
+}
+
+.scenario-picker-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.scenario-select {
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: #1a141d;
+  color: #fff;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-utility {
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background 0.15s;
+}
+
+.btn-utility:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.btn-utility.dnd-on {
+  background: #9e2a2b;
+  border-color: #ff9999;
+}
+
+.hint-toggle-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  cursor: pointer;
+  font-size: 0.85rem;
+  user-select: none;
+}
+
+.hint-toggle-pill input {
+  cursor: pointer;
+  accent-color: var(--accent-gold);
+}
+
+.lang-flags-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 4px 6px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+}
+
+.lang-flag-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3px 5px;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0.58;
+  transition: opacity 0.15s, border-color 0.15s, transform 0.12s;
+}
+
+.lang-flag-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.lang-flag-btn.active-flag {
+  opacity: 1;
+  border-color: #f9d976;
+  background: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 0 8px rgba(249, 217, 118, 0.35);
+}
+
+.lang-flag-btn svg {
+  display: block;
+  border-radius: 2px;
+}
+
+/* ============================================================================
+   STATUSRAD: Tidslinje & Pastorns Mätare
+   ============================================================================ */
+.status-ribbon {
+  max-width: 1440px;
+  margin: 14px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.15fr 1.35fr 1.2fr;
+  gap: 14px;
+  align-items: stretch;
+}
+
+.sunday-context-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-left: 6px solid var(--accent-violet);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.sunday-context-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.96rem;
+}
+
+.scripture-pill {
+  background: #f0e8da;
+  color: #4a3b2c;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+
+.current-time-display {
+  font-size: 0.94rem;
+}
+
+.status-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  width: fit-content;
+}
+
+.status-pill.echo-active {
+  background: #e1f4ea;
+  color: #1c5d3a;
+  border: 1px solid #95d5b2;
+}
+
+.status-pill.echo-inactive {
+  background: #f4ebe1;
+  color: #7f5539;
+}
+
+/* Veckotidslinje */
+.week-timeline {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+}
+
+.timeline-day {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  border-radius: var(--radius-sm);
+  background: #f8f5ef;
+  border: 1px solid transparent;
+}
+
+.timeline-day.day-current {
+  background: #fff8e8;
+  border-color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.timeline-day-name {
+  font-size: 0.78rem;
+  margin-bottom: 5px;
+}
+
+.timeline-slots {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.slot-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #dcd3c4;
+  display: inline-block;
+}
+
+.slot-dot.slot-done {
+  background: var(--accent-forest);
+}
+
+.slot-dot.slot-active {
+  background: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(198, 139, 44, 0.35);
+}
+
+/* Pastorns 3 mätare */
+.pastor-meters {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 10px 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 7px;
+}
+
+.meter-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.meter-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.79rem;
+}
+
+.meter-track {
+  height: 8px;
+  background: #eae2d6;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.meter-fill {
+  height: 100%;
+  transition: width 0.35s ease;
+}
+
+.fill-energy { background: linear-gradient(90deg, #d97706, #10b981); }
+.fill-spirit { background: linear-gradient(90deg, #7c3aed, #c084fc); }
+.fill-relation { background: linear-gradient(90deg, #2563eb, #38bdf8); }
+
+/* ============================================================================
+   HUVUDLAYOUT (2 Kolumner)
+   ============================================================================ */
+.main-workspace {
+  max-width: 1440px;
+  margin: 16px auto 0;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.55fr 1fr;
+  gap: 18px;
+  align-items: start;
+}
+
+/* ============================================================================
+   FÖRSAMLINGSKARTAN MED VANDRANDE PASTOR
+   ============================================================================ */
+.parish-map-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+}
+
+.map-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.map-header-bar h2 {
+  font-size: 1.15rem;
+}
+
+.thought-bubble {
+  background: #fcf4d9;
+  border: 1px solid #e3c878;
+  color: #4a3712;
+  padding: 8px 14px;
+  border-radius: 16px;
+  font-style: italic;
+  font-size: 0.86rem;
+  max-width: 440px;
+}
+
+/* 3D-Scen & Svävande 3D-Labels (isolerat stacking context så labels aldrig hamnar ovanpå modaler/händelserutor) */
+.scene3d-wrapper {
+  position: relative;
+  isolation: isolate;
+  z-index: 1;
+  height: 430px;
+  border-radius: var(--radius-md);
+  border: 2px solid #d5c7b2;
+  overflow: hidden;
+  background: #dcebd8;
+}
+
+.parish-scene3d {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.parish-scene3d:active {
+  cursor: pointer;
+}
+
+.scene3d-labels {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  isolation: isolate;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.scene3d-label {
+  position: absolute;
+  pointer-events: auto;
+  background: rgba(255, 253, 248, 0.93);
+  border: 1.5px solid #b59f84;
+  border-radius: 10px;
+  padding: 4px 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.16);
+  transition: border-color 0.2s, background 0.2s, box-shadow 0.2s;
+  white-space: nowrap;
+}
+
+.scene3d-label:hover {
+  border-color: var(--accent-gold);
+  background: #fffdf7;
+}
+
+.scene3d-label.active-3d-label {
+  border: 2px solid var(--accent-burgundy);
+  background: #fff8e6;
+  box-shadow: 0 0 0 4px rgba(198, 139, 44, 0.35), 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+.scene3d-label .lbl-icon {
+  font-size: 1.15rem;
+}
+
+.scene3d-label .lbl-text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.15;
+}
+
+.scene3d-label .lbl-text strong {
+  font-size: 0.76rem;
+  color: var(--ink-primary);
+}
+
+.scene3d-label .lbl-text small {
+  font-size: 0.65rem;
+  color: var(--ink-secondary);
+}
+
+.scene3d-pastor-label {
+  position: absolute;
+  transform: translate(-50%, 6px);
+  background: #251d29;
+  color: #f9d976;
+  border: 1.5px solid #f5cb5c;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 9px;
+  border-radius: 99px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+  pointer-events: none;
+  z-index: 95;
+  white-space: nowrap;
+}
+
+/* Rumsväxlings-banner & Animation för aktivitetstiles */
+.current-room-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.room-banner-icon {
+  font-size: 1.8rem;
+  background: #f8f2e6;
+  border: 1px solid var(--border-warm);
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes roomFlash {
+  0% {
+    box-shadow: 0 0 0 0 rgba(198, 139, 44, 0.55);
+    border-color: var(--accent-gold);
+    background-color: #fff9eb;
+  }
+  100% {
+    box-shadow: var(--shadow-soft);
+    border-color: var(--border-warm);
+    background-color: var(--bg-card);
+  }
+}
+
+.room-switch-flash {
+  animation: roomFlash 0.75s ease-out;
+}
+
+@keyframes tileRoomEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(14px) scale(0.96);
+  }
+  65% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.tile-room-enter {
+  animation: tileRoomEnter 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.parish-map {
+  position: relative;
+  height: 295px;
+  border-radius: var(--radius-md);
+  border: 2px solid #d5c7b2;
+  overflow: hidden;
+  transition: background 0.6s ease;
+}
+
+.parish-map[data-time="morning"] {
+  background: radial-gradient(circle at 50% 20%, #fef9e7 0%, #e4efe0 65%, #d2e3cf 100%);
+}
+
+.parish-map[data-time="afternoon"] {
+  background: radial-gradient(circle at 75% 25%, #fff3d6 0%, #dfead8 65%, #c7d9c2 100%);
+}
+
+.parish-map[data-time="evening"] {
+  background: radial-gradient(circle at 30% 20%, #3b3355 0%, #242238 70%, #191829 100%);
+}
+
+.parish-map[data-time="sunday"] {
+  background: radial-gradient(circle at 52% 18%, #fff6cc 0%, #f3e5ab 60%, #e0cda0 100%);
+}
+
+.map-paths-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.map-road-outer, .map-road-inner {
+  fill: none;
+  stroke: rgba(156, 132, 102, 0.45);
+  stroke-width: 1.2;
+  stroke-dasharray: 2.5 1.8;
+}
+
+.map-node {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 253, 248, 0.94);
+  border: 2px solid #b59f84;
+  border-radius: 12px;
+  padding: 7px 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 122px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s, border-color 0.2s, box-shadow 0.2s;
+  z-index: 2;
+}
+
+.map-node:hover {
+  transform: translate(-50%, -54%) scale(1.04);
+  border-color: var(--accent-gold);
+}
+
+.map-node.active-location {
+  border-color: var(--accent-burgundy);
+  background: #fff9eb;
+  box-shadow: 0 0 0 4px rgba(198, 139, 44, 0.32);
+}
+
+.node-icon {
+  font-size: 1.45rem;
+}
+
+.node-title {
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--ink-primary);
+}
+
+.node-sub {
+  font-size: 0.7rem;
+  color: var(--ink-secondary);
+}
+
+/* Pastorns Avatar ("Gubbe") */
+.pastor-avatar {
+  position: absolute;
+  transform: translate(-50%, -115%);
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.35));
+}
+
+.avatar-figure {
+  font-size: 1.9rem;
+  background: #2b1d28;
+  border: 2px solid #f5cb5c;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pastorBob 2.2s infinite ease-in-out;
+}
+
+.avatar-label {
+  background: #2b1d28;
+  color: #fff;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 99px;
+  margin-top: -4px;
+}
+
+@keyframes pastorBob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* ============================================================================
+   AKTIVITETSKORT & FILTER
+   ============================================================================ */
+.activities-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  margin-bottom: 16px;
+}
+
+.activities-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.location-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.loc-chip {
+  padding: 5px 10px;
+  border-radius: 99px;
+  border: 1px solid var(--border-warm);
+  background: #f7f3eb;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.loc-chip.active {
+  background: var(--accent-burgundy);
+  color: #fff;
+  border-color: var(--accent-burgundy);
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+  gap: 12px;
+}
+
+.activity-card {
+  background: var(--bg-parchment);
+  border: 1px solid #dfd3c0;
+  border-radius: 10px;
+  padding: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+  transition: transform 0.14s ease, border-color 0.14s ease, box-shadow 0.14s ease;
+}
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.08);
+  background: #fffdf8;
+}
+
+.activity-card-top {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.activity-icon-wrap {
+  font-size: 1.55rem;
+  background: #fff;
+  border: 1px solid var(--border-warm);
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.activity-title-group {
+  flex: 1;
+}
+
+.activity-loc-tag {
+  font-size: 0.72rem;
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.rec-pill {
+  background: #fef08a;
+  color: #713f12;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+
+.activity-title-group h4 {
+  font-size: 0.93rem;
+  color: var(--ink-primary);
+}
+
+.cost-badge {
+  font-size: 0.73rem;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+
+.cost-drain {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.cost-restore {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.activity-desc {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+}
+
+.activity-routine-hint {
+  font-size: 0.75rem;
+  background: rgba(255, 255, 255, 0.75);
+  border-left: 3px solid var(--accent-gold);
+  padding: 4px 8px;
+  color: #4a3b2c;
+}
+
+/* ============================================================================
+   HÖGERPANEL: PREDIKOVERKSTADEN (SKRIVBORDET)
+   ============================================================================ */
+.desk-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.desk-challenge-text {
+  background: #f8f2e6;
+  border-left: 4px solid var(--accent-burgundy);
+  padding: 10px 12px;
+  border-radius: 6px;
+  font-size: 0.83rem;
+}
+
+.homiletic-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.pillar-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pillar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.pillar-score.target-met {
+  color: var(--accent-forest);
+}
+
+.pillar-track {
+  position: relative;
+  height: 10px;
+  background: #eae2d6;
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.pillar-fill {
+  height: 100%;
+  transition: width 0.35s ease;
+}
+
+.fill-logos { background: #3b82f6; }
+.fill-kairos { background: #d97706; }
+.fill-pathos { background: #e11d48; }
+.fill-rhetoric { background: #8b5cf6; }
+
+.pillar-target-marker {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #1f1b18;
+  z-index: 2;
+}
+
+.desk-subbox {
+  border-top: 1px solid var(--border-warm);
+  padding-top: 12px;
+}
+
+.desk-subbox h3 {
+  font-size: 0.96rem;
+  margin-bottom: 8px;
+}
+
+.process-checklist {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.proc-step {
+  font-size: 0.8rem;
+  padding: 6px 8px;
+  background: #f5f0e6;
+  border-radius: 6px;
+  color: var(--ink-secondary);
+}
+
+.proc-step.proc-done {
+  background: #e3f5ec;
+  color: #14532d;
+  font-weight: 600;
+}
+
+/* Homiletiska former */
+.sermon-form-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.form-option {
+  border: 1px solid var(--border-warm);
+  background: #faf6ee;
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.form-option.selected {
+  border: 2px solid var(--accent-burgundy);
+  background: #fff9ec;
+}
+
+.form-option-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.84rem;
+}
+
+.theorist-tag {
+  font-size: 0.72rem;
+  color: var(--ink-secondary);
+}
+
+.form-option-desc {
+  font-size: 0.77rem;
+  color: var(--ink-secondary);
+  margin-top: 3px;
+}
+
+.form-option-bonus {
+  font-size: 0.74rem;
+  color: var(--accent-burgundy);
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+/* Predikans 4 akter */
+.sermon-sections-builder {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.sermon-section-slot {
+  background: #f9f5ec;
+  border: 1px solid #e3d8c6;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.sec-title {
+  font-weight: 700;
+  font-size: 0.83rem;
+}
+
+.sec-sub {
+  font-size: 0.74rem;
+  color: var(--ink-secondary);
+  margin-bottom: 5px;
+}
+
+.insight-select {
+  width: 100%;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #cbbba2;
+  background: #fff;
+  font-size: 0.8rem;
+}
+
+.assigned-card-preview {
+  margin-top: 5px;
+  font-size: 0.76rem;
+  font-style: italic;
+  color: #3d2c1e;
+  background: #fff8e6;
+  padding: 5px 8px;
+  border-left: 3px solid var(--accent-gold);
+}
+
+.synergy-badges-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.synergy-badge {
+  background: #fef9e7;
+  border: 1px solid #e9c46a;
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+}
+
+.syn-pts {
+  background: var(--accent-gold);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-size: 0.72rem;
+  margin-left: 4px;
+}
+
+.syn-desc {
+  font-size: 0.75rem;
+  color: var(--ink-secondary);
+}
+
+.empty-hint {
+  font-size: 0.78rem;
+  color: var(--ink-secondary);
+  font-style: italic;
+}
+
+/* Upplåsta Insikter under veckan (Högerpanelen) */
+.unlocked-insights-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.insight-deck-card {
+  background: #faf6ee;
+  border: 1px solid #dfd3c0;
+  border-left: 4px solid var(--accent-gold);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.insight-deck-card.cat-logos { border-left-color: #3b82f6; }
+.insight-deck-card.cat-kairos { border-left-color: #d97706; }
+.insight-deck-card.cat-pathos { border-left-color: #e11d48; }
+
+.insight-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  margin-bottom: 4px;
+}
+
+.insight-cat-pill {
+  font-size: 0.7rem;
+  background: #efe8da;
+  color: #4a3b2c;
+  padding: 1px 7px;
+  border-radius: 99px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.insight-card-quote {
+  font-size: 0.77rem;
+  font-style: italic;
+  color: var(--ink-secondary);
+}
+
+/* ============================================================================
+   LOGG & SÖNDAGSVY
+   ============================================================================ */
+.log-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-soft);
+}
+
+.activity-log-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  max-height: 240px;
+  overflow-y: auto;
+}
+
+.log-entry {
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: #faf6ef;
+  border-left: 4px solid #b5a590;
+  font-size: 0.82rem;
+}
+
+.log-entry.log-synergy {
+  border-left-color: var(--accent-gold);
+  background: #fffbeb;
+}
+
+.log-entry.log-disruption {
+  border-left-color: var(--accent-burgundy);
+  background: #fdf2f2;
+}
+
+.log-meta {
+  font-size: 0.72rem;
+  color: var(--ink-secondary);
+  text-transform: uppercase;
+}
+
+.log-title {
+  font-weight: 700;
+}
+
+/* SÖNDAGENS PREDIKSTOL */
+.pulpit-stage-card, .summary-card {
+  background: var(--bg-card);
+  border: 2px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  box-shadow: var(--shadow-soft);
+}
+
+.pulpit-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #2b1d28;
+  color: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.pulpit-bell-icon {
+  font-size: 2.2rem;
+}
+
+.pulpit-quote {
+  font-style: italic;
+  color: #f3e5ab;
+  margin-top: 4px;
+}
+
+.pews-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 10px;
+  margin: 10px 0 18px;
+}
+
+.pew-card {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #f8f4ec;
+  border: 1px solid var(--border-warm);
+  padding: 9px 12px;
+  border-radius: 8px;
+}
+
+.pew-avatar {
+  font-size: 1.7rem;
+}
+
+.pew-name {
+  font-weight: 700;
+  font-size: 0.84rem;
+}
+
+.pew-role, .pew-mood {
+  font-size: 0.74rem;
+  color: var(--ink-secondary);
+}
+
+.pew-bar-wrap {
+  height: 6px;
+  background: #e2d9c8;
+  border-radius: 99px;
+  overflow: hidden;
+  margin-top: 4px;
+}
+
+.pew-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #d97706, #16a34a);
+  transition: width 0.4s ease;
+}
+
+.pulpit-act-box {
+  background: #fcf8ef;
+  border: 1px solid #e2cfa9;
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.act-step-badge {
+  display: inline-block;
+  background: var(--accent-burgundy);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-bottom: 6px;
+}
+
+.pulpit-options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pulpit-choice-card {
+  text-align: left;
+  background: #fff;
+  border: 1.5px solid #cbbba2;
+  border-radius: 10px;
+  padding: 12px 14px;
+  cursor: pointer;
+  transition: border-color 0.15s, transform 0.12s;
+}
+
+.pulpit-choice-card:hover {
+  border-color: var(--accent-burgundy);
+  transform: translateY(-2px);
+  background: #fffdf7;
+}
+
+.pulpit-choice-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.92rem;
+  margin-bottom: 4px;
+}
+
+.pulpit-badge {
+  background: #f3e8d2;
+  color: #5a3e1b;
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-weight: 600;
+}
+
+.pulpit-choice-sub {
+  font-size: 0.82rem;
+  color: var(--ink-secondary);
+}
+
+.delivered-act-item {
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #f4efe4;
+  border-left: 3px solid var(--accent-forest);
+  font-size: 0.84rem;
+  border-radius: 6px;
+}
+
+/* SLUTRAPPORT & KYRKKAFFE */
+.summary-score-hero {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  background: linear-gradient(135deg, #2b1d28, #462739);
+  color: #fff;
+  padding: 22px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.score-circle {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  border: 4px solid var(--accent-gold);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.score-circle span {
+  font-size: 2.3rem;
+  font-weight: 800;
+  color: #f9d976;
+}
+
+.btn-primary-large {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent-gold);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 0.92rem;
+  transition: transform 0.12s, filter 0.15s;
+}
+
+.btn-primary-large:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.summary-actions-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.share-section-end {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.share-heading-small {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f9d976;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.share-row-clean {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.btn-clean-share {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #f9d976;
+  background: #f9d976;
+  color: #1f1b18;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+.btn-clean-share:hover {
+  filter: brightness(1.06);
+}
+
+.btn-clean-share.ghost {
+  background: transparent;
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.45);
+}
+
+.btn-clean-share.ghost:hover {
+  border-color: #f9d976;
+  color: #f9d976;
+}
+
+.share-copied-msg {
+  display: block;
+  min-height: 20px;
+  margin-top: 6px;
+  font-size: 0.82rem;
+  color: #86efac;
+  font-weight: 600;
+}
+
+/* ============================================================================
+   AVSKALAD DELNINGSSKÄRM / STARTSIDA (När någon klickar på en delad länk,
+   designad med enkelheten från nt2026-eller-nt1981)
+   ============================================================================ */
+body.shared-landing-mode .app-header,
+body.shared-landing-mode .status-ribbon,
+body.shared-landing-mode #mobile-compact-bar,
+body.shared-landing-mode .main-workspace {
+  display: none !important;
+}
+
+.shared-landing-screen {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 16px 48px;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.shared-landing-hero {
+  text-align: center;
+  padding: 6vh 0 2vh;
+}
+
+.shared-landing-hero h1 {
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, "Times New Roman", serif;
+  font-size: clamp(34px, 7vw, 62px);
+  line-height: 1.08;
+  margin: 0 0 14px;
+  letter-spacing: -0.01em;
+  color: #1F3A5F;
+}
+
+.shared-landing-lead {
+  max-width: 620px;
+  margin: 0 auto 30px;
+  color: #59636E;
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.shared-friend-box {
+  max-width: 560px;
+  margin: 0 auto 28px;
+  background: #FFFFFF;
+  border: 1px solid #E0D9CB;
+  border-radius: 14px;
+  padding: 15px 20px;
+  box-shadow: 0 1px 2px rgba(29, 35, 42, 0.06), 0 6px 18px rgba(29, 35, 42, 0.07);
+  font-size: 17px;
+  color: #1D232A;
+}
+
+.shared-friend-box strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.shared-landing-choices {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-landing-play {
+  font: inherit;
+  font-weight: 650;
+  border-radius: 12px;
+  border: 1.5px solid #1F3A5F;
+  background: #1F3A5F;
+  color: #FFFFFF;
+  padding: 14px 36px;
+  font-size: 18px;
+  min-width: 170px;
+  min-height: 52px;
+  cursor: pointer;
+  transition: transform 0.08s ease, filter 0.15s ease;
+}
+
+.btn-landing-play:hover {
+  filter: brightness(1.08);
+}
+
+.btn-landing-play:active {
+  transform: translateY(1px);
+}
+
+/* MOBIL KOMPAKTVY (Dold på desktop > 860px) */
+.mobile-compact-bar {
+  display: none;
+}
+
+.summary-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.routine-feedback-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.routine-feedback-item {
+  background: #f9f5ec;
+  border: 1px solid var(--border-warm);
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.coffee-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.coffee-quote-card {
+  background: #fdfaf3;
+  border: 1px solid var(--border-warm);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+.coffee-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.coffee-avatar {
+  font-size: 1.5rem;
+}
+
+.coffee-text {
+  font-size: 0.83rem;
+  font-style: italic;
+}
+
+.coffee-quote-card.coffee-tone-grumble {
+  border-left: 4px solid #b91c1c;
+  background: #fef2f2;
+}
+
+.coffee-quote-card.coffee-tone-mixed {
+  border-left: 4px solid #d97706;
+  background: #fffbeb;
+}
+
+.coffee-quote-card.coffee-tone-praise {
+  border-left: 4px solid #15803d;
+  background: #f0fdf4;
+}
+
+.diminish-pill {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.68rem;
+}
+
+.count-pill {
+  background: #e5e0d5;
+  color: #4a3b2c;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-size: 0.68rem;
+}
+
+/* ============================================================================
+   MODAL (STÖRNINGSMOMENT) & TOASTS
+   ============================================================================ */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 18, 22, 0.76);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.modal-card {
+  position: relative;
+  z-index: 2001;
+  background: var(--bg-card);
+  border: 2px solid var(--accent-burgundy);
+  border-radius: 14px;
+  max-width: 560px;
+  width: 100%;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+}
+
+.modal-badge {
+  display: inline-block;
+  background: #fee2e2;
+  color: #991b1b;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 99px;
+  margin-bottom: 8px;
+}
+
+.modal-desc {
+  margin: 12px 0 16px;
+  font-size: 0.95rem;
+}
+
+.modal-prompt {
+  font-weight: 700;
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+
+.disruption-choices {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.disruption-choice-btn {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #cbbba2;
+  background: #faf6ee;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.disruption-choice-btn:hover {
+  background: #fff9eb;
+  border-color: var(--accent-burgundy);
+}
+
+.choice-main {
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 3px;
+}
+
+.choice-effect {
+  font-size: 0.78rem;
+  color: var(--accent-burgundy);
+}
+
+.toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 2500;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 390px;
+}
+
+.toast {
+  background: #251d29;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  border-left: 5px solid var(--accent-gold);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  font-size: 0.85rem;
+  transition: opacity 0.35s ease;
+}
+
+.toast.fade-out {
+  opacity: 0;
+}
+
+/* ============================================================================
+   INTERAKTIV MINITUTORIAL I 2 STEG (Välkomstruta + Spotlight på Plats & Aktivitet)
+   ============================================================================ */
+.tutorial-banner {
+  background: linear-gradient(135deg, #2b1d28 0%, #3d2435 100%);
+  color: #fffdf7;
+  border: 2px solid var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  box-shadow: 0 10px 28px rgba(43, 29, 40, 0.24);
+  position: relative;
+  z-index: 25;
+  animation: tutBannerIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes tutBannerIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tutorial-banner-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tutorial-step-pill {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #1f1b18;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 2px 9px;
+  border-radius: 99px;
+}
+
+.tutorial-close-btn {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 0.78rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.tutorial-close-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.tutorial-title {
+  font-size: 1.02rem;
+  color: #f9d976;
+  margin-bottom: 5px;
+}
+
+.tutorial-body {
+  font-size: 0.86rem;
+  color: #f5efe2;
+  line-height: 1.48;
+  margin-bottom: 12px;
+}
+
+.tutorial-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-tutorial-primary {
+  background: #f9d976;
+  color: #1f1b18;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 14px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.1s;
+}
+
+.btn-tutorial-primary:hover {
+  filter: brightness(1.06);
+  transform: translateY(-1px);
+}
+
+.btn-tutorial-ghost {
+  background: transparent;
+  color: #e2d7c5;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 0.78rem;
+  cursor: pointer;
+}
+
+.btn-tutorial-ghost:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Pulserande guld-spotlight för Steg 1 (Platsknappar & 3D-scen) och Steg 2 (Aktivitetskort) */
+@keyframes tutorialPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.75), 0 0 22px rgba(234, 179, 8, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(245, 158, 11, 0.95), 0 0 32px rgba(245, 158, 11, 0.7);
+  }
+}
+
+.location-filter-bar.tutorial-spotlight-active {
+  padding: 6px;
+  border-radius: 12px;
+  background: #fffbeb;
+  animation: tutorialPulseGlow 1.6s infinite ease-in-out;
+}
+
+.location-filter-bar.tutorial-spotlight-active .loc-chip {
+  border-color: #d97706;
+}
+
+.scene3d-wrapper.tutorial-spotlight-active {
+  border-color: #eab308;
+  animation: tutorialPulseGlow 1.8s infinite ease-in-out;
+}
+
+.activities-grid.tutorial-spotlight-active {
+  padding: 6px;
+  border-radius: 12px;
+  background: rgba(254, 243, 199, 0.65);
+  animation: tutorialPulseGlow 1.6s infinite ease-in-out;
+}
+
+.activities-grid.tutorial-spotlight-active .activity-card {
+  border-color: #d97706;
+  background: #fffdf5;
+}
+
+/* ============================================================================
+   STATS-ANIMATIONER EFTER VAL (Upplysning av paneler, sifferräkning & +N/-N)
+   ============================================================================ */
+.pastor-meters,
+.homiletic-pillars,
+.mobile-desk-hud,
+.pews-grid {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.25s ease;
+}
+
+.stats-panel-pulse {
+  border-color: #eab308 !important;
+  box-shadow: 0 0 0 3px rgba(234, 179, 8, 0.45), 0 8px 26px rgba(198, 139, 44, 0.28) !important;
+  background-color: #fffdf4 !important;
+}
+
+/* Under rAF-animeringen följer staplarna med 60fps utan lagg */
+.stats-panel-pulse .meter-fill,
+.stats-panel-pulse .pillar-fill,
+.stats-panel-pulse .pew-bar-fill {
+  transition: none !important;
+}
+
+.stat-changed-up {
+  position: relative;
+  border-radius: 6px;
+  background: rgba(22, 163, 74, 0.11) !important;
+  transition: background-color 0.25s ease;
+}
+
+.stat-changed-down {
+  position: relative;
+  border-radius: 6px;
+  background: rgba(220, 38, 38, 0.11) !important;
+  transition: background-color 0.25s ease;
+}
+
+.stat-changed-up strong,
+.stat-changed-up .pillar-score {
+  color: #15803d !important;
+  font-weight: 800 !important;
+}
+
+.stat-changed-down strong,
+.stat-changed-down .pillar-score {
+  color: #b91c1c !important;
+  font-weight: 800 !important;
+}
+
+.stat-delta-badge {
+  display: inline-block;
+  margin-left: 5px;
+  padding: 1px 6px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.2;
+  vertical-align: middle;
+  animation: deltaBadgePop 1.3s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  pointer-events: none;
+}
+
+.stat-delta-badge.delta-up {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.stat-delta-badge.delta-down {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fca5a5;
+}
+
+@keyframes deltaBadgePop {
+  0% {
+    opacity: 0;
+    transform: translateY(4px) scale(0.85);
+  }
+  18% {
+    opacity: 1;
+    transform: translateY(-1px) scale(1.08);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.95);
+  }
+}
+
+/* Responsiva kortetiketter (visas på mobil <= 860px, dolda på desktop) */
+.m-short,
+.day-short {
+  display: none;
+}
+
+.parish-scene3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+}
+
+@media (max-width: 1060px) {
+  .status-ribbon, .main-workspace, .summary-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ============================================================================
+   KOMPAKT & FULLT RESPONSIV MOBILVY (<= 860px)
+   Strikt 100vw breddkontroll (min-width: 0 överallt) & kompakt höjddesign
+   ============================================================================ */
+@media (max-width: 860px) {
+  html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  body {
+    padding-bottom: 20px;
+  }
+
+  /* Byt ut långa etiketter mot korta mobilvänliga etiketter */
+  .m-full,
+  .day-full,
+  .v-max,
+  .time-range-full {
+    display: none !important;
+  }
+
+  .m-short,
+  .day-short {
+    display: inline !important;
+  }
+
+  /* Förhindra att något grid- eller flex-barn spränger kolumnbredden */
+  .app-header,
+  .status-ribbon,
+  .status-ribbon > *,
+  .mobile-compact-bar,
+  .mobile-compact-bar > *,
+  .main-workspace,
+  .main-workspace > *,
+  .left-stage,
+  .left-stage > *,
+  .right-desk,
+  .right-desk > *,
+  .parish-map-card,
+  .scene3d-wrapper,
+  .parish-scene3d,
+  .activities-section,
+  .activity-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  /* 1. Slimmad Toppanel */
+  .app-header {
+    padding: 7px 10px;
+    gap: 6px;
+  }
+
+  .brand-group {
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .brand-emblem {
+    width: 28px;
+    height: 28px;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  .app-title {
+    font-size: 0.98rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .app-subtitle {
+    display: none;
+  }
+
+  .scenario-picker-wrap {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.72rem;
+    align-items: center;
+  }
+
+  .lang-flags-group {
+    padding: 2px 4px;
+    gap: 3px;
+  }
+
+  .lang-flag-btn {
+    padding: 2px 3px;
+  }
+
+  .lang-flag-btn svg {
+    width: 20px;
+    height: 12px;
+  }
+
+  #lbl-sunday-select {
+    display: none;
+  }
+
+  .scenario-select {
+    padding: 4px 6px;
+    font-size: 0.73rem;
+    flex: 1 1 130px;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .btn-utility, .hint-toggle-pill {
+    padding: 3px 7px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+  }
+
+  /* 2. Kompakt Statusrad: Söndag + Tidslinje + 3 Mätare utan horisontell svällning */
+  .status-ribbon {
+    width: 100%;
+    margin: 5px auto 0;
+    padding: 0 8px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 5px;
+  }
+
+  .sunday-context-card {
+    padding: 6px 9px;
+    border-left-width: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  .sunday-context-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.8rem;
+    min-width: 0;
+  }
+
+  #sunday-badge-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+
+  .scripture-pill {
+    font-size: 0.68rem;
+    padding: 1px 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 48%;
+    flex-shrink: 0;
+  }
+
+  .current-time-display {
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .status-pill {
+    font-size: 0.68rem;
+    padding: 1px 7px;
+  }
+
+  /* 6-kolumners tidslinje med 3-bokstävers dagnamn (Tis..Sön / Tue..Sun) */
+  .week-timeline {
+    padding: 4px 5px;
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 3px;
+  }
+
+  .timeline-day {
+    padding: 3px 1px;
+    min-width: 0;
+  }
+
+  .timeline-day-name {
+    font-size: 0.65rem;
+    margin-bottom: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .timeline-slots {
+    gap: 3px;
+  }
+
+  .slot-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Pastorns 3 mätare i strikt 3-kolumners grid med korta etiketter */
+  .pastor-meters {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+    padding: 5px 8px;
+  }
+
+  .meter-box {
+    min-width: 0;
+  }
+
+  .meter-label {
+    font-size: 0.68rem;
+    margin-bottom: 2px;
+    gap: 3px;
+    min-width: 0;
+  }
+
+  .meter-label span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .meter-track {
+    height: 5px;
+  }
+
+  /* 3. Homiletisk Mini-HUD + Flikväljare (endast under förberedelsefasen) */
+  body[data-phase="prep"] .mobile-compact-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 5px auto 0;
+    padding: 0 8px;
+  }
+
+  .mobile-desk-hud {
+    background: var(--bg-card);
+    border: 1px solid var(--border-warm);
+    border-radius: 8px;
+    padding: 5px 7px;
+    box-shadow: 0 3px 10px rgba(38, 29, 20, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .mob-hud-pillars-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+  }
+
+  .mob-hud-pillar {
+    background: #f8f4ec;
+    border-radius: 5px;
+    padding: 2px 5px;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  .mob-hud-pillar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.69rem;
+    margin-bottom: 2px;
+  }
+
+  .mob-hud-bar {
+    height: 4px;
+    background: #e5dec9;
+    border-radius: 99px;
+    overflow: hidden;
+  }
+
+  .mob-hud-steps-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+  }
+
+  .mob-hud-step {
+    font-size: 0.64rem;
+    text-align: center;
+    background: #f4efe4;
+    border-radius: 4px;
+    padding: 2px 3px;
+    color: var(--ink-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+    min-width: 0;
+  }
+
+  .mob-hud-step.done {
+    background: #e3f5ec;
+    color: #14532d;
+    font-weight: 700;
+  }
+
+  .mobile-tab-bar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    background: #2b1d28;
+    padding: 3px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.14);
+  }
+
+  .mob-tab-btn {
+    border: none;
+    background: transparent;
+    color: #e6dec8;
+    padding: 5px 4px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  .mob-tab-btn.active {
+    background: var(--accent-gold);
+    color: #fff;
+  }
+
+  /* 4. Flikstyrning av arbetsytan på mobil under förberedelsen */
+  .main-workspace {
+    width: 100%;
+    margin-top: 5px;
+    padding: 0 8px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+  }
+
+  /* Flik 1: Kyrkbacke & Aktiviteter */
+  body[data-phase="prep"][data-mob-tab="map"] .right-desk,
+  body[data-phase="prep"][data-mob-tab="map"] .log-section {
+    display: none !important;
+  }
+
+  /* Flik 2: Skrivbord & Insikter */
+  body[data-phase="prep"][data-mob-tab="desk"] #prep-phase-view {
+    display: none !important;
+  }
+
+  /* Flik 3: Dagbok / Logg */
+  body[data-phase="prep"][data-mob-tab="log"] .parish-map-card,
+  body[data-phase="prep"][data-mob-tab="log"] .tutorial-banner,
+  body[data-phase="prep"][data-mob-tab="log"] .activities-section,
+  body[data-phase="prep"][data-mob-tab="log"] .right-desk {
+    display: none !important;
+  }
+
+  .tutorial-banner {
+    padding: 10px 12px;
+    margin-bottom: 8px;
+  }
+
+  .tutorial-title {
+    font-size: 0.9rem;
+  }
+
+  .tutorial-body {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+
+  .btn-tutorial-primary,
+  .btn-tutorial-ghost {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  body[data-phase="prep"][data-mob-tab="log"] .activity-log-list {
+    max-height: 62vh;
+  }
+
+  /* Under söndagens predikstol & slutrapport döljs skrivbordspanelen på mobil för fokus */
+  body[data-phase="sunday_delivery"] .right-desk,
+  body[data-phase="sunday_summary"] .right-desk {
+    display: none !important;
+  }
+
+  /* 5. Kompakt 3D-scen & Aktivitetskort så både karta och val ryms samtidigt */
+  .parish-map-card {
+    padding: 7px 9px;
+    margin-bottom: 8px;
+  }
+
+  .map-header-bar {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 5px;
+    gap: 4px;
+  }
+
+  #map-heading {
+    font-size: 0.88rem;
+  }
+
+  #map-subheading {
+    display: none;
+  }
+
+  .thought-bubble {
+    font-size: 0.72rem;
+    padding: 4px 8px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .scene3d-wrapper {
+    width: 100%;
+    height: 205px;
+  }
+
+  .parish-scene3d {
+    width: 100%;
+    height: 205px;
+  }
+
+  .scene3d-label {
+    padding: 2px 6px;
+    gap: 3px;
+    border-radius: 7px;
+  }
+
+  .scene3d-label .lbl-icon {
+    font-size: 0.78rem;
+  }
+
+  .scene3d-label .lbl-text strong {
+    font-size: 0.66rem;
+  }
+
+  /* Dölj undertiteln på 3D-labels i mobilvyn så de blir nätta och aldrig överlappar */
+  .scene3d-label .lbl-text small {
+    display: none;
+  }
+
+  .activities-section {
+    padding: 8px 9px;
+    margin-bottom: 8px;
+  }
+
+  .activities-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px;
+    margin-bottom: 7px;
+  }
+
+  .current-room-banner {
+    gap: 7px;
+  }
+
+  .room-banner-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.05rem;
+    flex-shrink: 0;
+  }
+
+  #current-room-title {
+    font-size: 0.82rem;
+  }
+
+  #current-room-desc {
+    display: none;
+  }
+
+  /* Platspiller i en kompakt 3x2-grid istället för bred rad som sticker ut */
+  .location-filter-bar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 4px;
+    width: 100%;
+  }
+
+  .loc-chip {
+    padding: 4px 5px;
+    font-size: 0.68rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+    min-width: 0;
+  }
+
+  .activities-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 6px;
+  }
+
+  .activity-card {
+    padding: 8px 9px;
+    gap: 4px;
+  }
+
+  .activity-icon-wrap {
+    width: 28px;
+    height: 28px;
+    font-size: 0.95rem;
+  }
+
+  .activity-title-group {
+    min-width: 0;
+  }
+
+  .activity-title-group h4 {
+    font-size: 0.83rem;
+  }
+
+  .activity-desc {
+    font-size: 0.74rem;
+    line-height: 1.3;
+  }
+
+  /* Kompakt söndags- och sammanfattningsvy på mobil */
+  .pulpit-stage-card, .summary-card {
+    padding: 12px;
+  }
+
+  .pews-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px;
+  }
+
+  .pew-card {
+    padding: 6px 8px;
+    min-width: 0;
+  }
+
+  .summary-score-hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .share-row-clean {
+    justify-content: center;
+  }
+
+  .summary-actions-row {
+    justify-content: center;
+  }
+}

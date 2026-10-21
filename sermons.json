@@ -1,0 +1,1011 @@
+[
+  {
+    "date": "10/21/2026",
+    "sundayTitle": "Septuagesima – Grace and Service",
+    "scriptureRef": "Matt 20:1–16 (The Laborers in the Vineyard)",
+    "totalScore": 72,
+    "breakdown": {
+      "pillarScore": 28,
+      "processScore": 18,
+      "deliveryScore": 17,
+      "synergyScore": 4,
+      "formBonus": 2,
+      "ethosAndSustainability": 3,
+      "unpreparedPenalty": 0
+    },
+    "rankTitle": "📖 Solid Sunday Sermon",
+    "rankSubtitle": "The message had good points and touched several listeners, though parts of the craft or balance left room to grow.",
+    "stats": {
+      "logos": 41,
+      "kairos": 31,
+      "pathos": 75,
+      "rhetoric": 79
+    },
+    "energy": 44,
+    "spirit": 100,
+    "relation": 85,
+    "draftProgress": 100,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Early Sowing (Tue–Wed)",
+        "description": "You read the biblical text early in the week so it could germinate in your subconscious.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletic Incubation",
+        "description": "When you let go of the desk and walked in the woods, the pieces of the sermon fell into place on their own.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "embodied_word",
+        "title": "Embodied Word",
+        "description": "You rehearsed a completed draft in the pulpit so the words can be delivered with free eye contact.",
+        "bonusPoints": 7
+      },
+      {
+        "id": "saturday_peace",
+        "title": "Saturday Peace at the Parsonage",
+        "description": "You finished preparing in time and rested on Saturday evening.",
+        "bonusPoints": 8
+      }
+    ],
+    "routineFeedback": [
+      "ℹ️ **Varied but Inverted Order:** You varied your approach in the pulpit, though some elements appeared in the wrong dramatic sequence.",
+      "✅ **Harmonious Whole:** You achieved high excellence across all four homiletical dimensions (Logos, Kairos, Pathos, and Rhetoric)!",
+      "✅ **Exemplary Incubation:** You studied the biblical text early in the week so 'Echo of the Text' enriched your later encounters.",
+      "✅ **Complete Craftsmanship:** The manuscript was fully drafted, stylistically polished, and rehearsed aloud in the pulpit.",
+      "✅ **Saturday Peace:** You finished on time and rested Saturday evening—giving you calm authority on Sunday morning."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Devoted Churchwarden",
+        "avatar": "👵",
+        "heart": 82,
+        "tone": "mixed",
+        "comment": "“A steady Sunday sermon with good intentions, even if you could tell the week had been full of other things.”"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Overworked IT Architect",
+        "avatar": "👨‍💼",
+        "heart": 76,
+        "tone": "mixed",
+        "comment": "“The cultural diagnosis hit the mark, though the structure wobbled a bit toward the end.”"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Exhausted Parent of Toddlers",
+        "avatar": "👩",
+        "heart": 82,
+        "tone": "mixed",
+        "comment": "“There was lovely warmth when the pastor spoke of grace, even if the rest of the sermon was a little hard to follow.”"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Confirmand in the Back Pew",
+        "avatar": "🧑",
+        "heart": 77,
+        "tone": "mixed",
+        "comment": "“The pastor spoke vividly and well, though some parts in the middle dragged a bit.”"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptical Retired Teacher",
+        "avatar": "👓",
+        "heart": 76,
+        "tone": "mixed",
+        "comment": "“The textual exposition in the middle was genuinely solid, even if the application at the end felt a bit half-baked.”"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Widow in the Front Pew",
+        "avatar": "🧣",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "“Lovely to be at High Mass today. Parts of the sermon warmed my heart, while other parts drifted by.”"
+      }
+    ]
+  },
+  {
+    "date": "10/20/2026",
+    "sundayTitle": "Septuagesima – Grace and Service",
+    "scriptureRef": "Matt 20:1–16 (The Laborers in the Vineyard)",
+    "totalScore": 72,
+    "breakdown": {
+      "pillarScore": 29,
+      "processScore": 19,
+      "deliveryScore": 20,
+      "synergyScore": 5,
+      "formBonus": 2,
+      "ethosAndSustainability": -3,
+      "unpreparedPenalty": 0
+    },
+    "rankTitle": "📖 Solid Sunday Sermon",
+    "rankSubtitle": "The message had good points and touched several listeners, though parts of the craft or balance left room to grow.",
+    "stats": {
+      "logos": 60,
+      "kairos": 45,
+      "pathos": 69,
+      "rhetoric": 90
+    },
+    "energy": 16,
+    "spirit": 97,
+    "relation": 87,
+    "draftProgress": 86,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Early Sowing (Tue–Wed)",
+        "description": "You read the biblical text early in the week so it could germinate in your subconscious.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "barth_double",
+        "title": "Karl Barth's Double Vision",
+        "description": "The Bible in one hand and the newspaper in the other on the very same day!",
+        "bonusPoints": 6
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletic Incubation",
+        "description": "When you let go of the desk and walked in the woods, the pieces of the sermon fell into place on their own.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "stott_bridge",
+        "title": "John Stott's Bridge-Building",
+        "description": "You sketched the sermon structure anchored in both the biblical world, contemporary life, and pastoral care.",
+        "bonusPoints": 8
+      },
+      {
+        "id": "embodied_word",
+        "title": "Embodied Word",
+        "description": "You rehearsed a completed draft in the pulpit so the words can be delivered with free eye contact.",
+        "bonusPoints": 7
+      }
+    ],
+    "routineFeedback": [
+      "✅ **Thoughtful Rhetorical Arc (+3 pts):** You varied your voice well and let each act fulfill its homiletical purpose.",
+      "✅ **Harmonious Whole:** You achieved high excellence across all four homiletical dimensions (Logos, Kairos, Pathos, and Rhetoric)!",
+      "✅ **Exemplary Incubation:** You studied the biblical text early in the week so 'Echo of the Text' enriched your later encounters.",
+      "✅ **Strong Bridge-Building:** You sketched the sermon's structure after gathering both theological depth and everyday insights.",
+      "✅ **Complete Craftsmanship:** The manuscript was fully drafted, stylistically polished, and rehearsed aloud in the pulpit."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Devoted Churchwarden",
+        "avatar": "👵",
+        "heart": 83,
+        "tone": "mixed",
+        "comment": "“A steady Sunday sermon with good intentions, even if you could tell the week had been full of other things.”"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Overworked IT Architect",
+        "avatar": "👨‍💼",
+        "heart": 80,
+        "tone": "mixed",
+        "comment": "“The cultural diagnosis hit the mark, though the structure wobbled a bit toward the end.”"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Exhausted Parent of Toddlers",
+        "avatar": "👩",
+        "heart": 82,
+        "tone": "mixed",
+        "comment": "“There was lovely warmth when the pastor spoke of grace, even if the rest of the sermon was a little hard to follow.”"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Confirmand in the Back Pew",
+        "avatar": "🧑",
+        "heart": 80,
+        "tone": "mixed",
+        "comment": "“The pastor spoke vividly and well, though some parts in the middle dragged a bit.”"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptical Retired Teacher",
+        "avatar": "👓",
+        "heart": 80,
+        "tone": "mixed",
+        "comment": "“The textual exposition in the middle was genuinely solid, even if the application at the end felt a bit half-baked.”"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Widow in the Front Pew",
+        "avatar": "🧣",
+        "heart": 85,
+        "tone": "mixed",
+        "comment": "“Lovely to be at High Mass today. Parts of the sermon warmed my heart, while other parts drifted by.”"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 14,
+    "breakdown": {
+      "pillarScore": 7,
+      "processScore": 0,
+      "deliveryScore": 0,
+      "synergyScore": 0,
+      "formBonus": 0,
+      "ethosAndSustainability": -4,
+      "unpreparedPenalty": 19
+    },
+    "rankTitle": "🌧️ Homiletiskt Magplask",
+    "rankSubtitle": "Kyrkkaffet surrar av besvikna miner. Tunnelseende, utebliven textbearbetning eller total utmattning fällde predikan.",
+    "stats": {
+      "logos": 16,
+      "kairos": 10,
+      "pathos": 12,
+      "rhetoric": 46
+    },
+    "energy": 58,
+    "spirit": 27,
+    "relation": 42,
+    "draftProgress": 0,
+    "synergies": [],
+    "routineFeedback": [
+      "❌ **Monoton predikoleverans (-12p):** Du valde samma inriktning i predikans alla fyra akter. Utan växling mellan text, nutid, nåd och sändning tröttnade kyrkbänkarna.",
+      "❌ **Obalanserad förberedelse:** Du försummade **Själavård & Hjärta (Pathos)** grovt. En predikan står på fyra ben – om ett ben saknas välter helheten.",
+      "❌ **Oläst bibeltext (-6p):** Du gick upp i predikstolen utan att ha närläst söndagens grundtext!",
+      "⚠️ **Saknad disposition (-4p):** Du hoppade över »Skissa struktur & homiletisk idé«, vilket gjorde predikan spretig.",
+      "⚠️ **Ofärdigt manus (0%):** Du kom till söndagen utan ett färdigskrivet manusutkast."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 16,
+        "tone": "grumble",
+        "comment": "»Ja, pastorn har ju suttit inlåst på kammaren hela veckan och inte synts till i församlingen, och det hördes – man kan inte predika över huvudet på sitt folk!«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 21,
+        "tone": "grumble",
+        "comment": "»Har pastorn överhuvudtaget öppnat en dagstidning eller pratat med en yrkesarbetande människa den här veckan? Helt världsfrånvänt.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 22,
+        "tone": "grumble",
+        "comment": "»Jag kom hit helt slutkörd och längtade efter ett ord av tröst, men fick en kall teologisk föreläsning över huvudet. Känner mig mer ensam än när jag kom.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 24,
+        "tone": "grumble",
+        "comment": "»Alltså förlåt, men pratade pastorn ens med oss? Det lät som någon som läste högt ur en dammig uppslagsbok i samma tonläge i tjugo minuter.«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 20,
+        "tone": "grumble",
+        "comment": "»Ursäkta att jag är rakt på sak vid kaffebordet, men var tog söndagens bibeltext vägen? Det där var ett allmänt kåseri, inte en predikan!«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 16,
+        "tone": "grumble",
+        "comment": "»Kära hjärtanes, det fanns ingen ro eller bön bakom orden idag. Man hörde hur jäktad och andligt dränerad pastorn var.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Första söndagen i advent – Nådens år",
+    "scriptureRef": "Matt 21:1–9 (Intåget i Jerusalem)",
+    "totalScore": 14,
+    "breakdown": {
+      "pillarScore": 11,
+      "processScore": 0,
+      "deliveryScore": 0,
+      "synergyScore": 0,
+      "formBonus": 0,
+      "ethosAndSustainability": -8,
+      "unpreparedPenalty": 19
+    },
+    "rankTitle": "🌧️ Homiletiskt Magplask",
+    "rankSubtitle": "Kyrkkaffet surrar av besvikna miner. Tunnelseende, utebliven textbearbetning eller total utmattning fällde predikan.",
+    "stats": {
+      "logos": 23,
+      "kairos": 41,
+      "pathos": 16,
+      "rhetoric": 19
+    },
+    "energy": 42,
+    "spirit": 24,
+    "relation": 36,
+    "draftProgress": 0,
+    "synergies": [],
+    "routineFeedback": [
+      "❌ **Monoton predikoleverans (-12p):** Du valde samma inriktning i predikans alla fyra akter. Utan växling mellan text, nutid, nåd och sändning tröttnade kyrkbänkarna.",
+      "❌ **Obalanserad förberedelse:** Du försummade **Retorisk gestaltning** grovt. En predikan står på fyra ben – om ett ben saknas välter helheten.",
+      "❌ **Oläst bibeltext (-6p):** Du gick upp i predikstolen utan att ha närläst söndagens grundtext!",
+      "⚠️ **Saknad disposition (-4p):** Du hoppade över »Skissa struktur & homiletisk idé«, vilket gjorde predikan spretig.",
+      "⚠️ **Ofärdigt manus (0%):** Du kom till söndagen utan ett färdigskrivet manusutkast."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 19,
+        "tone": "grumble",
+        "comment": "»Ja, pastorn har ju suttit inlåst på kammaren hela veckan och inte synts till i församlingen, och det hördes – man kan inte predika över huvudet på sitt folk!«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 27,
+        "tone": "grumble",
+        "comment": "»Total avsaknad av röd tråd. Som ett oförberett måndagsmöte där talaren glömt göra sin hemläxa.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 17,
+        "tone": "grumble",
+        "comment": "»Jag kom hit helt slutkörd och längtade efter ett ord av tröst, men fick en kall teologisk föreläsning över huvudet. Känner mig mer ensam än när jag kom.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 23,
+        "tone": "grumble",
+        "comment": "»Alltså förlåt, men pratade pastorn ens med oss? Det lät som någon som läste högt ur en dammig uppslagsbok i samma tonläge i tjugo minuter.«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 26,
+        "tone": "grumble",
+        "comment": "»Ursäkta att jag är rakt på sak vid kaffebordet, men var tog söndagens bibeltext vägen? Det där var ett allmänt kåseri, inte en predikan!«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 18,
+        "tone": "grumble",
+        "comment": "»Kära hjärtanes, det fanns ingen ro eller bön bakom orden idag. Man hörde hur jäktad och andligt dränerad pastorn var.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Domsöndagen – Kristi återkomst",
+    "scriptureRef": "Matt 25:31–46 (Människosonens dom)",
+    "totalScore": 14,
+    "breakdown": {
+      "pillarScore": 19,
+      "processScore": 4,
+      "deliveryScore": 0,
+      "synergyScore": 2,
+      "formBonus": 1,
+      "ethosAndSustainability": -11,
+      "unpreparedPenalty": 9
+    },
+    "rankTitle": "🌧️ Homiletiskt Magplask",
+    "rankSubtitle": "Kyrkkaffet surrar av besvikna miner. Tunnelseende, utebliven textbearbetning eller total utmattning fällde predikan.",
+    "stats": {
+      "logos": 46,
+      "kairos": 42,
+      "pathos": 19,
+      "rhetoric": 32
+    },
+    "energy": 27,
+    "spirit": 31,
+    "relation": 34,
+    "draftProgress": 32,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "barth_double",
+        "title": "Karl Barths Dubbelblick",
+        "description": "Bibeln i ena handen och tidningen i den andra under samma dag!",
+        "bonusPoints": 6
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 5
+      }
+    ],
+    "routineFeedback": [
+      "❌ **Monoton predikoleverans (-12p):** Du valde samma inriktning i predikans alla fyra akter. Utan växling mellan text, nutid, nåd och sändning tröttnade kyrkbänkarna.",
+      "ℹ️ **Svag koppling till vald predikoform:** Ditt arbetssätt under veckan matchade inte fullt ut den predikoform du hade valt.",
+      "❌ **Obalanserad förberedelse:** Du försummade **Själavård & Hjärta (Pathos)** grovt. En predikan står på fyra ben – om ett ben saknas välter helheten.",
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan så att »Textens eko« berikade dina möten.",
+      "⚠️ **Saknad disposition (-4p):** Du hoppade över »Skissa struktur & homiletisk idé«, vilket gjorde predikan spretig.",
+      "⚠️ **Ofärdigt manus (32%):** Du kom till söndagen utan ett färdigskrivet manusutkast."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 25,
+        "tone": "grumble",
+        "comment": "»Ja, pastorn har ju suttit inlåst på kammaren hela veckan och inte synts till i församlingen, och det hördes – man kan inte predika över huvudet på sitt folk!«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 34,
+        "tone": "grumble",
+        "comment": "»Total avsaknad av röd tråd. Som ett oförberett måndagsmöte där talaren glömt göra sin hemläxa.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 22,
+        "tone": "grumble",
+        "comment": "»Jag kom hit helt slutkörd och längtade efter ett ord av tröst, men fick en kall teologisk föreläsning över huvudet. Känner mig mer ensam än när jag kom.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 29,
+        "tone": "grumble",
+        "comment": "»Alltså förlåt, men pratade pastorn ens med oss? Det lät som någon som läste högt ur en dammig uppslagsbok i samma tonläge i tjugo minuter.«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 35,
+        "tone": "grumble",
+        "comment": "»Goda exegetiska ansatser, men utan disposition och färdigarbetat manus ramlade predikan isär i lösa fragment.«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 22,
+        "tone": "grumble",
+        "comment": "»Kära hjärtanes, det fanns ingen ro eller bön bakom orden idag. Man hörde hur jäktad och andligt dränerad pastorn var.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 69,
+    "breakdown": {
+      "pillarScore": 29,
+      "processScore": 15,
+      "deliveryScore": 19,
+      "synergyScore": 4,
+      "formBonus": 4,
+      "ethosAndSustainability": 0,
+      "unpreparedPenalty": 2
+    },
+    "rankTitle": "📖 Hedervärd Söndagspredikan",
+    "rankSubtitle": "Budskapet hade goda poänger och flera i bänkarna berördes, men delar av hantverket eller balansen lämnade mer att önska.",
+    "stats": {
+      "logos": 75,
+      "kairos": 60,
+      "pathos": 84,
+      "rhetoric": 84
+    },
+    "energy": 28,
+    "spirit": 100,
+    "relation": 100,
+    "draftProgress": 64,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "lectio_divina",
+        "title": "Lectio Divina (Studium & Bön)",
+        "description": "Du förenade intellektuellt bibelstudium med bön vid altaret.",
+        "bonusPoints": 6
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "stott_bridge",
+        "title": "John Stotts Brobygge",
+        "description": "Du skissade predikans struktur med förankring i både Bibelns värld, samtiden och själavården.",
+        "bonusPoints": 8
+      }
+    ],
+    "routineFeedback": [
+      "✅ **Genomtänkt retorisk båge (+3p):** Du varierade tilltalet väl och lät varje akt fylla sin homiletiska uppgift.",
+      "✅ **Trogen den narrativa formen:** Du lät berättelsen mogna under skogspromenaden och förenade textdjup med en stark vändpunkt i nåden.",
+      "✅ **Harmonisk helhet:** Du nådde hög verkshöjd i alla fyra homiletiska dimensioner (Logos, Kairos, Pathos och Retorik)!",
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan så att »Textens eko« berikade dina möten.",
+      "✅ **Stark brobyggnad:** Du skissade predikans struktur efter att ha samlat både teologiskt djup och vardagsinsikter.",
+      "⚠️ **Ofärdigt manus (64%):** Du kom till söndagen utan ett färdigskrivet manusutkast."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "»En stabil söndagspredikan med goda intentioner, även om det märktes att veckan varit full av annat.«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 81,
+        "tone": "mixed",
+        "comment": "»Samtidsspaningen träffade rätt, men strukturen svajade lite på vägen mot slutet.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "»Det fanns en väldigt fin värme när pastorn talade om nåden, även om resten av predikan var lite svår att hänga med i.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 81,
+        "tone": "mixed",
+        "comment": "»Pastorn pratade levande och bra, men vissa delar i mitten blev lite långrandiga.«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 81,
+        "tone": "mixed",
+        "comment": "»Textutläggningen i mitten var riktigt hedervärd, även om tillämpningen på slutet kändes lite halvfärdig.«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 86,
+        "tone": "mixed",
+        "comment": "»Fint med högmässa idag. Vissa delar av predikan värmde gott, annat flög lite förbi.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 39,
+    "breakdown": {
+      "pillarScore": 29,
+      "processScore": 8,
+      "deliveryScore": 8,
+      "synergyScore": 4,
+      "formBonus": 2,
+      "ethosAndSustainability": -3,
+      "unpreparedPenalty": 9
+    },
+    "rankTitle": "🌧️ Homiletiskt Magplask",
+    "rankSubtitle": "Kyrkkaffet surrar av besvikna miner. Tunnelseende, utebliven textbearbetning eller total utmattning fällde predikan.",
+    "stats": {
+      "logos": 69,
+      "kairos": 52,
+      "pathos": 72,
+      "rhetoric": 69
+    },
+    "energy": 7,
+    "spirit": 96,
+    "relation": 100,
+    "draftProgress": 0,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "lectio_divina",
+        "title": "Lectio Divina (Studium & Bön)",
+        "description": "Du förenade intellektuellt bibelstudium med bön vid altaret.",
+        "bonusPoints": 6
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "stott_bridge",
+        "title": "John Stotts Brobygge",
+        "description": "Du skissade predikans struktur med förankring i både Bibelns värld, samtiden och själavården.",
+        "bonusPoints": 8
+      }
+    ],
+    "routineFeedback": [
+      "⚠️ **Ensidig dramaturgi (-4p):** Predikan pendlade bara mellan två lägen och saknade en fulltonig retorisk båge.",
+      "✅ **Harmonisk helhet:** Du nådde hög verkshöjd i alla fyra homiletiska dimensioner (Logos, Kairos, Pathos och Retorik)!",
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan så att »Textens eko« berikade dina möten.",
+      "✅ **Stark brobyggnad:** Du skissade predikans struktur efter att ha samlat både teologiskt djup och vardagsinsikter.",
+      "⚠️ **Ofärdigt manus (0%):** Du kom till söndagen utan ett färdigskrivet manusutkast."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 67,
+        "tone": "grumble",
+        "comment": "»Det var väl inte pastorns mest minnesvärda söndag i predikstolen, om jag ska säga det snällt.«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 64,
+        "tone": "grumble",
+        "comment": "»Total avsaknad av röd tråd. Som ett oförberett måndagsmöte där talaren glömt göra sin hemläxa.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 67,
+        "tone": "grumble",
+        "comment": "»Pastorn såg ju mer utmattad ut än jag! Det lät som ett manus framkrystat klockan två i natt på ren stress.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 64,
+        "tone": "grumble",
+        "comment": "»Pastorn tappade ju bort sig i sina egna meningar hela tiden. Om inte ens prästen vet vart predikan är på väg, hur ska vi på sista bänk orka lyssna?«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 64,
+        "tone": "grumble",
+        "comment": "»Goda exegetiska ansatser, men utan disposition och färdigarbetat manus ramlade predikan isär i lösa fragment.«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 69,
+        "tone": "grumble",
+        "comment": "»Kära hjärtanes, det fanns ingen ro eller bön bakom orden idag. Man hörde hur jäktad och andligt dränerad pastorn var.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 76,
+    "breakdown": {
+      "pillarScore": 29,
+      "processScore": 17,
+      "deliveryScore": 23,
+      "synergyScore": 5,
+      "formBonus": 2,
+      "ethosAndSustainability": 0,
+      "unpreparedPenalty": 0
+    },
+    "rankTitle": "📖 Hedervärd Söndagspredikan",
+    "rankSubtitle": "Budskapet hade goda poänger och flera i bänkarna berördes, men delar av hantverket eller balansen lämnade mer att önska.",
+    "stats": {
+      "logos": 73,
+      "kairos": 64,
+      "pathos": 70,
+      "rhetoric": 88
+    },
+    "energy": 27,
+    "spirit": 100,
+    "relation": 97,
+    "draftProgress": 100,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "lectio_divina",
+        "title": "Lectio Divina (Studium & Bön)",
+        "description": "Du förenade intellektuellt bibelstudium med bön vid altaret.",
+        "bonusPoints": 6
+      },
+      {
+        "id": "barth_double",
+        "title": "Karl Barths Dubbelblick",
+        "description": "Bibeln i ena handen och tidningen i den andra under samma dag!",
+        "bonusPoints": 6
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 5
+      },
+      {
+        "id": "stott_bridge",
+        "title": "John Stotts Brobygge",
+        "description": "Du skissade predikans struktur med förankring i både Bibelns värld, samtiden och själavården.",
+        "bonusPoints": 8
+      }
+    ],
+    "routineFeedback": [
+      "🌟 **Fulländad 4-akts dramaturgi (+7p):** Alla fyra akter (Samtidsöppning -> Textutläggning -> Evangeliets vändpunkt -> Retorisk sändning) bildade en oemotståndlig retorisk kombo!",
+      "✅ **Harmonisk helhet:** Du nådde söndagens mål i alla fyra homiletiska dimensioner (Logos, Kairos, Pathos och Retorik)!",
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan så att »Textens eko« berikade dina möten.",
+      "✅ **Stark brobyggnad:** Du skissade predikans struktur efter att ha samlat både teologiskt djup och vardagsinsikter."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 88,
+        "tone": "mixed",
+        "comment": "»En stabil söndagspredikan med goda intentioner, även om det märktes att veckan varit full av annat.«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "»Samtidsspaningen träffade rätt, men strukturen svajade lite på vägen mot slutet.«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 87,
+        "tone": "mixed",
+        "comment": "»Det fanns en väldigt fin värme när pastorn talade om nåden, även om resten av predikan var lite svår att hänga med i.«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "»Pastorn pratade levande och bra, men vissa delar i mitten blev lite långrandiga.«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 84,
+        "tone": "mixed",
+        "comment": "»Textutläggningen i mitten var riktigt hedervärd, även om tillämpningen på slutet kändes lite halvfärdig.«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 89,
+        "tone": "mixed",
+        "comment": "»Fint med högmässa idag. Vissa delar av predikan värmde gott, annat flög lite förbi.«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 100,
+    "rankTitle": "🌟 Katedralens Klang – Homiletiskt Mästerverk",
+    "rankSubtitle": "Ordet och livet smälte samman. Människor går hem från kyrkan med tända hjärtan och ny blick på vardagen.",
+    "stats": {
+      "logos": 100,
+      "kairos": 11,
+      "pathos": 11,
+      "rhetoric": 42
+    },
+    "energy": 10,
+    "spirit": 89,
+    "relation": 23,
+    "draftProgress": 0,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 8
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 8
+      }
+    ],
+    "routineFeedback": [
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan. Det lät texten sjunka in och gav extra utdelning i dina möten med människor.",
+      "⚠️ **Ingen uttalad disposition:** Du skrev manus utan att först »Skissa struktur & homiletisk idé«, vilket gjorde den röda tråden svagare."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-20",
+    "sundayTitle": "Septuagesima – Nåd och tjänst",
+    "scriptureRef": "Matt 20:1–16 (Arbetarna i vingården)",
+    "totalScore": 100,
+    "rankTitle": "🌟 Katedralens Klang – Homiletiskt Mästerverk",
+    "rankSubtitle": "Ordet och livet smälte samman. Människor går hem från kyrkan med tända hjärtan och ny blick på vardagen.",
+    "stats": {
+      "logos": 100,
+      "kairos": 90,
+      "pathos": 100,
+      "rhetoric": 94
+    },
+    "energy": 100,
+    "spirit": 100,
+    "relation": 100,
+    "draftProgress": 0,
+    "synergies": [
+      {
+        "id": "early_seed",
+        "title": "Tidig Sådd (Tis–Ons)",
+        "description": "Du läste grundtexten tidigt i veckan så att den får gro i det undermedvetna.",
+        "bonusPoints": 8
+      },
+      {
+        "id": "lectio_divina",
+        "title": "Lectio Divina (Studium & Bön)",
+        "description": "Du förenade intellektuellt bibelstudium med bön vid altaret.",
+        "bonusPoints": 10
+      },
+      {
+        "id": "incubation_walk",
+        "title": "Homiletisk Inkubation",
+        "description": "När du släppte taget och gick ut i skogen föll predikans pusselbitar på plats av sig själva.",
+        "bonusPoints": 8
+      },
+      {
+        "id": "stott_bridge",
+        "title": "John Stotts Brobygge",
+        "description": "Du skissade predikans struktur med stark förankring i både Bibelns värld och människornas vardag.",
+        "bonusPoints": 12
+      }
+    ],
+    "routineFeedback": [
+      "✅ **Föredömlig inkubation:** Du gjorde bibelstudiet redan tidigt i veckan. Det lät texten sjunka in och gav extra utdelning i dina möten med människor.",
+      "✅ **Stark brobyggnad:** Du skissade predikans struktur efter att ha samlat både teologiskt djup och vardagsinsikter."
+    ],
+    "coffeeQuotes": [
+      {
+        "name": "Margareta, 71",
+        "role": "Trogen kyrkvärd",
+        "avatar": "👵",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Johan, 42",
+        "role": "Utarbetad IT-arkitekt",
+        "avatar": "👨‍💼",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Sara, 34",
+        "role": "Trött småbarnsförälder",
+        "avatar": "👩",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Liam, 15",
+        "role": "Konfirmand på sista bänk",
+        "avatar": "🧑",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Bengt, 66",
+        "role": "Skeptisk pensionerad lärare",
+        "avatar": "👓",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      },
+      {
+        "name": "Agda, 83",
+        "role": "Änka i främre bänken",
+        "avatar": "🧣",
+        "heart": 100,
+        "comment": "»Det kändes som att du talade rakt in i mitt liv idag. Den här predikan bär jag med mig hela veckan!«"
+      }
+    ]
+  }
+]

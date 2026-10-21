@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Homiletics Workshop – From Text to Pulpit</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" id="og-title" content="The Homiletics Workshop – From Text to Pulpit" />
+  <meta property="og:description" id="og-desc" content="A homiletical strategy game of pastoral life, textual incubation &amp; Sunday preaching." />
+  <meta name="twitter:card" content="summary" />
+  <link rel="stylesheet" href="styles.css?v=6" />
+</head>
+<body>
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ====================================================================
+       TOPPANEL: Kyrkoårssöndag, Avatar, Ledtrådar & Verktyg
+       ==================================================================== -->
+  <header class="app-header">
+    <div class="brand-group">
+      <div class="brand-emblem">⛪</div>
+      <div>
+        <h1 id="app-title" class="app-title">The Homiletics Workshop</h1>
+        <p id="app-subtitle" class="app-subtitle">A homiletical strategy game of pastoral life, textual incubation &amp; Sunday preaching</p>
+      </div>
+    </div>
+
+    <div class="scenario-picker-wrap">
+      <div class="lang-flags-group" role="group" aria-label="Language / Språk">
+        <button id="btn-lang-sv" class="lang-flag-btn" onclick="game.setLanguage('sv', true)" title="Svenska">
+          <svg viewBox="0 0 16 10" width="24" height="15" aria-hidden="true">
+            <rect width="16" height="10" fill="#006aa7"/>
+            <rect x="5" y="0" width="2" height="10" fill="#fecc00"/>
+            <rect x="0" y="4" width="16" height="2" fill="#fecc00"/>
+          </svg>
+        </button>
+        <button id="btn-lang-en" class="lang-flag-btn active-flag" onclick="game.setLanguage('en', true)" title="English">
+          <svg viewBox="0 0 60 30" width="24" height="15" aria-hidden="true">
+            <rect width="60" height="30" fill="#012169"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="3.2"/>
+            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+            <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+          </svg>
+        </button>
+      </div>
+      <label id="lbl-sunday-select" for="scenario-select">Sunday:</label>
+      <select id="scenario-select" class="scenario-select"></select>
+      <button id="btn-new-week" class="btn-utility" onclick="game.startNextSunday()">🔄 New Week</button>
+      <button id="btn-avatar" class="btn-utility" onclick="game.toggleAvatarGender()">👔 Avatar: Male</button>
+      <label id="lbl-hint-pill" class="hint-toggle-pill" title="Toggle homiletical hints, recommendations, and target markers in the interface">
+        <input type="checkbox" id="chk-show-hints" onchange="game.setShowHints(this.checked)" />
+        <span id="lbl-hint-text">💡 Give me hints</span>
+      </label>
+      <button id="btn-dnd" class="btn-utility" onclick="game.toggleDoNotDisturb()">🔔 Phone: Open</button>
+      <button id="btn-sound" class="btn-utility" onclick="const on = window.soundEngine.toggle(); this.textContent = on ? game.t().soundOn : game.t().soundOff">🔇 Sound: Off</button>
+      <button id="btn-tutorial" class="btn-utility" onclick="game.startTutorial(true)" title="Tutorial / Guide">❓ Guide</button>
+    </div>
+  </header>
+
+  <!-- ====================================================================
+       STATUSRAD: Aktuell tid, Veckotidslinje & Pastorns 3 Mätare
+       ==================================================================== -->
+  <section class="status-ribbon">
+    <div id="sunday-badge" class="sunday-context-card">
+      <div class="sunday-context-header">
+        <strong id="sunday-badge-title">Septuagesima</strong>
+        <span id="sunday-badge-ref" class="scripture-pill">Matt 20:1–16</span>
+      </div>
+      <div id="current-time-display" class="current-time-display">🌅 Tisdag Förmiddag</div>
+      <div id="echo-status-pill" class="status-pill echo-inactive">💤 Texten oläst</div>
+    </div>
+
+    <div id="week-timeline" class="week-timeline"></div>
+
+    <div class="pastor-meters">
+      <div id="meter-energy-box" class="meter-box" title="Mental skärpa och ork. Låg energi sänker utbytet av studier och skrivande.">
+        <div class="meter-label"><span id="lbl-meter-energy">⚡ Energi &amp; Skärpa</span><strong id="meter-energy-val">80/100</strong></div>
+        <div class="meter-track"><div id="meter-energy-bar" class="meter-fill fill-energy" style="width:80%"></div></div>
+      </div>
+      <div id="meter-spirit-box" class="meter-box" title="Andlig förankring och äkthet (Ethos). Stärks av bön, tystnad och goda vägval.">
+        <div class="meter-label"><span id="lbl-meter-spirit">🕯️ Frimodighet (Ethos)</span><strong id="meter-spirit-val">48/100</strong></div>
+        <div class="meter-track"><div id="meter-spirit-bar" class="meter-fill fill-spirit" style="width:48%"></div></div>
+      </div>
+      <div id="meter-relation-box" class="meter-box" title="Församlingens förtroende och hur lyhörda kyrkbänkarna är på söndag.">
+        <div class="meter-label"><span id="lbl-meter-relation">🤝 Församlingsrelation</span><strong id="meter-relation-val">55/100</strong></div>
+        <div class="meter-track"><div id="meter-relation-bar" class="meter-fill fill-relation" style="width:55%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       MOBIL KOMPAKTVY: Homiletisk Mini-HUD & Flikväljare (visas på skärmar <= 860px)
+       ==================================================================== -->
+  <section id="mobile-compact-bar" class="mobile-compact-bar">
+    <div id="mobile-desk-hud" class="mobile-desk-hud"></div>
+    <div id="mobile-tab-bar" class="mobile-tab-bar" role="tablist">
+      <button id="mob-tab-map" class="mob-tab-btn active" onclick="game.setMobileTab('map')">⛪ Parish &amp; Actions</button>
+      <button id="mob-tab-desk" class="mob-tab-btn" onclick="game.setMobileTab('desk')">📜 Desk &amp; Insights (<span id="mob-insight-count">0</span>)</button>
+      <button id="mob-tab-log" class="mob-tab-btn" onclick="game.setMobileTab('log')">📓 Journal</button>
+    </div>
+  </section>
+
+  <!-- ====================================================================
+       HUVUDLAYOUT: Vänster/Mitten (3D-Scen + Rumspecifika Aktiviteter) & Höger (Skrivbordet)
+       ==================================================================== -->
+  <main class="main-workspace">
+    <!-- VÄNSTER / MITTEN: FÖRBEREDELSEFAS (Tisdag–Lördag) -->
+    <section id="prep-phase-view" class="left-stage">
+      <!-- 3D-VY MED ROTERANDE KYRKBACKEN, 6 BYGGNADER & VANDRANDE PRÄST -->
+      <div class="parish-map-card">
+        <div class="map-header-bar">
+          <div>
+            <h2 id="map-heading">⛪ The Parish Green &amp; Study</h2>
+            <span id="map-subheading" class="muted">Click a building or label to walk there—the scene rotates the location to the front and swaps the activity tiles below.</span>
+          </div>
+          <div id="pastor-thought-bubble" class="thought-bubble">
+            »Måndagens ledighet är över. Söndagens bibeltext ligger uppslagen på skrivbordet...«
+          </div>
+        </div>
+
+        <div class="scene3d-wrapper">
+          <div id="parish-scene3d" class="parish-scene3d"></div>
+          <div id="scene3d-labels" class="scene3d-labels"></div>
+        </div>
+      </div>
+
+      <!-- INTERAKTIV MINITUTORIAL I TVÅ STEG (Förstagångsbesökare / ❓ Guide) -->
+      <div id="tutorial-banner" class="tutorial-banner hidden" role="region" aria-live="polite">
+        <div class="tutorial-banner-top">
+          <span id="tutorial-step-pill" class="tutorial-step-pill">STEP 1 OF 2</span>
+          <button type="button" class="tutorial-close-btn" onclick="game.finishTutorial()" aria-label="Close">✕</button>
+        </div>
+        <h3 id="tutorial-title">Welcome to The Homiletics Workshop!</h3>
+        <p id="tutorial-body"></p>
+        <div class="tutorial-actions">
+          <button id="btn-tutorial-next" type="button" class="btn-tutorial-primary" onclick="game.advanceTutorial()">Next: Choose Activity →</button>
+          <button id="btn-tutorial-skip" type="button" class="btn-tutorial-ghost" onclick="game.finishTutorial()">Got it</button>
+        </div>
+      </div>
+
+      <!-- AKTIVITETSVÄLJARE FÖR AKTUELL PLATS -->
+      <div id="activities-section-card" class="activities-section">
+        <div class="activities-header">
+          <div id="current-room-banner" class="current-room-banner">
+            <span class="room-banner-icon">📖</span>
+            <div>
+              <h3 id="current-room-title">Arbetsrummet</h3>
+              <p id="current-room-desc" class="muted">Välj vad du vill ägna detta arbetspass åt på denna plats:</p>
+            </div>
+          </div>
+          <div id="location-filter-bar" class="location-filter-bar"></div>
+        </div>
+        <div id="activities-grid" class="activities-grid"></div>
+      </div>
+
+      <!-- VECKANS DAGBOK / LOGG -->
+      <div class="log-section">
+        <h3 id="log-heading">📓 Pastorns Veckologg</h3>
+        <div id="activity-log-list" class="activity-log-list"></div>
+      </div>
+    </section>
+
+    <!-- VÄNSTER / MITTEN: SÖNDAGENS HÖGMÄSSA (Predikstolen i 4 akter) -->
+    <section id="sunday-phase-view" class="left-stage hidden">
+      <div class="pulpit-stage-card">
+        <div class="pulpit-banner">
+          <div class="pulpit-bell-icon">🔔</div>
+          <div>
+            <h2 id="pulpit-sunday-title">Söndagens Högmässa</h2>
+            <p id="pulpit-scripture-quote" class="pulpit-quote"></p>
+          </div>
+        </div>
+
+        <div class="pews-section">
+          <h3 id="pews-heading">👥 Kyrkbänkarna (Församlingens gensvar i realtid)</h3>
+          <div id="pews-grid" class="pews-grid"></div>
+        </div>
+
+        <div class="pulpit-act-box">
+          <div id="act-step-badge" class="act-step-badge">I PREDIKSTOLEN NU</div>
+          <h3 id="pulpit-act-heading">Akt 1</h3>
+          <p id="pulpit-act-subtitle" class="muted"></p>
+          <div id="pulpit-options-list" class="pulpit-options-list"></div>
+        </div>
+
+        <div id="pulpit-act-history" class="pulpit-act-history"></div>
+      </div>
+    </section>
+
+    <!-- VÄNSTER / MITTEN: SÖNDAGENS UTVÄRDERING & KYRKKAFFE -->
+    <section id="summary-phase-view" class="left-stage hidden">
+      <div class="summary-card">
+        <div class="summary-score-hero">
+          <div class="score-circle">
+            <span id="eval-score-number">88</span>
+            <small id="score-points-label">Effektpoäng</small>
+          </div>
+          <div class="score-verdict">
+            <h2 id="eval-rank-title">Sustaining &amp; Luminous Proclamation</h2>
+            <p id="eval-rank-subtitle"></p>
+            <div class="share-section-end">
+              <div id="lbl-share-heading" class="share-heading-small">SHARE YOUR RESULT</div>
+              <div class="share-row-clean">
+                <button id="btn-share-native" class="btn-clean-share hidden" type="button" onclick="game.shareNative()">Share …</button>
+                <a id="sh-fb" class="btn-clean-share" target="_blank" rel="noopener">Facebook</a>
+                <a id="sh-x" class="btn-clean-share" target="_blank" rel="noopener">X</a>
+                <a id="sh-wa" class="btn-clean-share" target="_blank" rel="noopener">WhatsApp</a>
+                <a id="sh-li" class="btn-clean-share" target="_blank" rel="noopener">LinkedIn</a>
+                <a id="sh-mail" class="btn-clean-share ghost">Email</a>
+                <button id="btn-share-copy" class="btn-clean-share ghost" type="button" onclick="game.copyShareUrl()">Copy link</button>
+              </div>
+              <span id="share-copied-msg" class="share-copied-msg" aria-live="polite"></span>
+            </div>
+            <div class="summary-actions-row">
+              <button id="btn-play-again" class="btn-primary-large" onclick="game.startNextSunday()">🔄 Play Another Preaching Week</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="summary-columns">
+          <div class="summary-box">
+            <h3 id="eval-routine-heading">🎓 Homiletisk Processanalys (Arbetsrutin)</h3>
+            <ul id="eval-routine-list" class="routine-feedback-list"></ul>
+          </div>
+          <div class="summary-box">
+            <h3 id="eval-coffee-heading">☕ Röster vid Kyrkkaffet</h3>
+            <div id="eval-coffee-grid" class="coffee-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HÖGERPANEL: SKRIVBORDET, PREDIKOFORM & UPPLÅSTA INSIKTER -->
+    <aside class="right-desk">
+      <div class="desk-card">
+        <h2 id="desk-heading">📜 Predikoverkstaden (Skrivbordet)</h2>
+        <p class="desk-challenge-text">
+          <strong id="desk-context-label">Veckans kontext:</strong>
+          <span id="desk-challenge-body">Bygg en bro mellan bibeltextens värld och församlingens vardag.</span>
+        </p>
+
+        <!-- De 4 homiletiska pelarna -->
+        <div id="homiletic-pillars" class="homiletic-pillars"></div>
+
+        <!-- Checklista för arbetsrutin -->
+        <div class="desk-subbox">
+          <h3 id="desk-checklist-heading">🧭 Manus &amp; Förberedelsestatus</h3>
+          <div id="process-checklist" class="process-checklist"></div>
+        </div>
+
+        <!-- Val av homiletisk form -->
+        <div class="desk-subbox">
+          <h3 id="desk-form-heading">📐 Predikans Form (Homiletisk inriktning)</h3>
+          <div id="sermon-form-selector" class="sermon-form-selector"></div>
+        </div>
+
+        <!-- Upplåsta rutinbonusar / synergier -->
+        <div class="desk-subbox">
+          <h3 id="desk-synergies-heading">✨ Upplåsta Arbetsrutin-synergier</h3>
+          <div id="synergy-badges-list" class="synergy-badges-list"></div>
+        </div>
+
+        <!-- Lista med upplåsta insikter under veckan -->
+        <div class="desk-subbox">
+          <h3><span id="desk-insights-heading-text">💡 Upplåsta Insikter under veckan</span> (<span id="insight-count-badge">0</span>)</h3>
+          <div id="unlocked-insights-list" class="unlocked-insights-list"></div>
+        </div>
+      </div>
+    </aside>
+  </main>
+
+  <!-- ====================================================================
+       MODAL FÖR STÖRNINGSMOMENT (Pastoral vardag & akuta händelser)
+       ==================================================================== -->
+  <div id="disruption-modal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div id="disruption-type" class="modal-badge">Oväntat avbrott</div>
+      <h2 id="disruption-title">Knackning på dörren</h2>
+      <p id="disruption-desc" class="modal-desc"></p>
+      <div id="disruption-prompt" class="modal-prompt">Hur hanterar du situationen?</div>
+      <div id="disruption-choices" class="disruption-choices"></div>
+    </div>
+  </div>
+
+  <!-- ====================================================================
+       AVSKALAD DELNINGSSKÄRM / STARTSIDA (När någon öppnar en delad länk,
+       designad med enkelheten från nt2026-eller-nt1981)
+       ==================================================================== -->
+  <section id="shared-landing-screen" class="shared-landing-screen hidden">
+    <div class="shared-landing-hero">
+      <h1 id="landing-title">Predikoverkstaden</h1>
+      <p id="landing-lead" class="shared-landing-lead">
+        Ett homiletiskt strategispel om pastorns vardag, textens mognad och söndagens predikan.
+      </p>
+      <div id="landing-friend-box" class="shared-friend-box">
+        Någon har delat sitt resultat: <strong>88 av 100 poäng</strong>. Kan du slå det?
+      </div>
+      <div class="shared-landing-choices">
+        <button id="btn-landing-play" class="btn-landing-play" type="button" onclick="game.closeSharedResultAndPlay()">
+          Spela
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="three.min.js?v=6"></script>
+  <script src="data.js?v=6"></script>
+  <script src="i18n.js?v=6"></script>
+  <script src="audio.js?v=6"></script>
+  <script src="scene3d.js?v=6"></script>
+  <script src="game.js?v=6"></script>
+  <script data-goatcounter="https://nt2026vsnt1981.goatcounter.com/count"
+          async src="https://gc.zgo.at/count.js"></script>
+</body>
+</html>

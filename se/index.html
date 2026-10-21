@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Predikoverkstaden</title>
+  <script>
+    try { localStorage.setItem("predikoverkstaden_lang", "sv"); } catch (e) {}
+    var q = new URLSearchParams(window.location.search);
+    q.set("lang", "se");
+    window.location.replace("../?" + q.toString());
+  </script>
+</head>
+<body></body>
+</html>
