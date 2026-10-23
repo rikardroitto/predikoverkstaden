@@ -196,6 +196,9 @@ class SermonGame {
     // 6. Om vi är i slututvärderingen, räkna om utvärderingstexterna på det nya språket
     if (this.phase === "sunday_summary") {
       this.evaluation = this.calculateFinalEvaluation();
+      if (!this.headless) {
+        this.updateUrlWithScore(this.evaluation);
+      }
     }
 
     if (!this.headless) {
@@ -394,8 +397,8 @@ class SermonGame {
     this.resetState();
     if (!this.headless) {
       try {
-        if (window.history && window.history.replaceState && (window.location.search.includes("score=") || window.location.search.includes("r="))) {
-          window.history.replaceState({}, "", window.location.pathname);
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState({}, "", this.basePath());
         }
       } catch (e) {}
       const sel = document.getElementById("scenario-select");
@@ -1434,15 +1437,16 @@ class SermonGame {
   updateUrlWithScore(ev) {
     if (typeof window === "undefined" || !ev) return;
     try {
-      const langCode = this.lang === "en" ? "en" : "se";
+      const s = this.clamp(Math.round(ev.totalScore || 0), 0, 100);
+      const staticRelPath = `${this.basePath()}${this.isEn() ? "en" : "s"}/${s}.html`;
       if (window.history && window.history.replaceState) {
-        window.history.replaceState({}, "", `${window.location.pathname}?r=${ev.totalScore}-100&lang=${langCode}`);
+        window.history.replaceState({}, "", staticRelPath);
       }
 
       const shareTitle =
         this.lang === "en"
-          ? `I scored ${ev.totalScore} out of 100 in "The Homiletics Workshop"`
-          : `Jag fick ${ev.totalScore} av 100 poäng i "Predikoverkstaden"`;
+          ? `I scored ${s} out of 100 in "The Homiletics Workshop"`
+          : `Jag fick ${s} av 100 poäng i "Predikoverkstaden"`;
       document.title = shareTitle;
       const ogTitleEl = document.getElementById("og-title");
       if (ogTitleEl) ogTitleEl.setAttribute("content", shareTitle);
@@ -2018,12 +2022,31 @@ class SermonGame {
   }
 
   // ==========================================================================
-  // DELNING & AVSKALAD DELNINGSSKÄRM (exakt efter mönster från nt2026-eller-nt1981)
+  // DELNING & 100 STATISKA RESULTATSIDOR (s/0..100.html & en/0..100.html)
   // ==========================================================================
+  basePath() {
+    if (typeof window === "undefined" || !window.location) return "/";
+    let p = window.location.pathname || "/";
+    p = p.replace(/\/(s|en|r|share\/se|share\/en)\/[^/]*$/, "/");
+    p = p.replace(/\/(se|sv|en|index\.html)\/?$/, "/");
+    if (!p.endsWith("/")) p += "/";
+    return p;
+  }
+
   baseUrl() {
     if (typeof window === "undefined" || !window.location) return "";
-    const path = window.location.pathname.replace(/\/(se|sv|en|index\.html)\/?$/, "/");
-    return window.location.origin + (path.endsWith("/") ? path : path + "/");
+    return window.location.origin + this.basePath();
+  }
+
+  publicBaseUrl() {
+    if (typeof window === "undefined" || !window.location) {
+      return "https://rikardroitto.github.io/predikoverkstaden/";
+    }
+    const host = (window.location.hostname || "").toLowerCase();
+    if (host === "localhost" || host === "127.0.0.1" || /^192\.168\./.test(host) || /^10\./.test(host)) {
+      return "https://rikardroitto.github.io/predikoverkstaden/";
+    }
+    return this.baseUrl();
   }
 
   getShareInfo() {
@@ -2031,7 +2054,7 @@ class SermonGame {
     const s = this.clamp(Math.round(ev.totalScore || 0), 0, 100);
     const en = this.isEn();
     const title = en ? "The Homiletics Workshop" : "Predikoverkstaden";
-    const url = en ? `${this.baseUrl()}share/en/${s}.html` : `${this.baseUrl()}r/${s}-av-100.html`;
+    const url = en ? `${this.publicBaseUrl()}en/${s}.html` : `${this.publicBaseUrl()}s/${s}.html`;
     const text = en
       ? `I scored ${s} out of 100 in "${title}". Can you prepare and preach a better Sunday sermon?`
       : `Jag fick ${s} av 100 poäng i spelet "${title}". Kan du förbereda och leverera en bättre predikan?`;
